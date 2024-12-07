@@ -37,7 +37,7 @@ $\Delta_\beta$ или в $X$. Случаи $x', z' \in \Delta_\beta$ и $ x', z'
 
  	 \Def{Пусть $\mathcal{R}\big([X],[Y]\big)$ --- класс всех соответствий между
 облаками $[X]$ и $[Y]$. Определим \emph{искажение} соответствия $\dis R$
-аналогично определению 1.2. \emph{Расстоянием Громова--Хаусдорфа} между облаками
+аналогично \ref{defSootvet}. \emph{Расстоянием Громова--Хаусдорфа} между облаками
 будем называть величину
 $d_{GH}\big([X],[Y]\big) = \frac{1}{2}\inf\bigl\{\dis R : R\in \mathcal{R}\big([X],[Y]\big)\bigr\}$.}
 \begin{theorem}
@@ -45,17 +45,23 @@ $d_{GH}\big([X],[Y]\big) = \frac{1}{2}\inf\bigl\{\dis R : R\in \mathcal{R}\big([
 \end{theorem}
 \begin{proof}
 Пусть $n\Delta_\alpha$ --- симплекс мощности $\alpha$, умноженный на $n$. Рассмотрим дизъюнктное
-объединение симплексов $A_\alpha = \bigsqcup_{n=1}^\infty n\Delta_\alpha$. Для
-$a_k \in k\Delta_\alpha, a_l \in l\Delta_\alpha |a_k, a_l| = \max(k, l)$.
-Получивсееся расстояноие будет метрикой и $A_\alpha$ - метрическое пространство
+объединение симплексов $A_\alpha = \bigsqcup_{n=1}^\infty n\Delta_\alpha$.
+Зададим расстояние между точками $A_{\alpha}$ следующим образом:
+\begin{itemize}
+  \item Если $a, b$ лежат в одном симплексе $k\Delta_{\alpha}$, то $|ab| = k$.
+  \item Если $a_{k}$ лежит в симплексе $k\Delta_{\alpha}$, а $a_{l}$ --- в $l\Delta_{\alpha}$,
+        то $|a_{k} a_{l}| = \max(k,l)$.
+\end{itemize}
+Полученное расстояние будет метрикой и $A_\alpha$ --- метрическим пространством
 мощности $\alpha$. Рассмотрим $A_\alpha$, $A_\beta$, $\beta>\alpha$ и
-соответствие $R$ между ними.$\forall n\in \mathbb{N}$
-$|n\Delta_\beta| > |A_\alpha|$ $\Rightarrow$ $\exists$
-$a, b \in n\Delta_\beta$, $x\in A_\alpha$: $(x,a), (x,b) \in R$, и
-$||xx| - |ab|| = n$. Следовательно $disR > n$ $\forall n, R$. Следовательно
-$d_{GH}(A_\alpha, A_\beta) = \infty$ $\forall \alpha, \beta$.
-$\mathbb{X}_\alpha, \mathbb{X}_\beta$ - облака, содержащие $A_\alpha$ и
-$A_\beta$ соотвественно. Получаем, что облаков не меньше, чем мощностей
-множеств, следовательно набор всех облаков не является множеством.
-
+соответствие $R$ между ними. Для любого натурального $N$
+мощность $|n\Delta_\beta|$ больше мощности $|A_\alpha|$. Это означает,
+что найдутся  $a, b \in n\Delta_\beta$ и $x\in A_\alpha$такие, что
+$(x,a), (x,b)$ лежат в соответствии $R$, и
+$\big||xx| - |ab|\big| = n$. Следовательно $disR > n$ для всех натуральных
+$n$, откуда
+$d_{GH}(A_\alpha, A_\beta) = \infty$ для любых $\alpha, \beta$, не равных друг другу.
+Это означает, что облака $\left[A_{\alpha}\right]$ и $\left[A_{\alpha}\right]$
+различны, следовательно облаков не меньше, чем кардинальных чисел,
+ которые не являются множеством.
 \end{proof}

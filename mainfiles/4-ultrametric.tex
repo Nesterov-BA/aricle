@@ -1,43 +1,65 @@
 %!TEX root = ../kursovaya.tex
 
 \section{Невыполнение ультраметрического неравенства}
-Для облака $[\Delta_{1}]$ справедливо ультраметрическое неравенство(Замечание
-1.4). Следующая лемма показывает, что для облака $[\mathbb[R]]$
-это неравенство может не выполняться. \\
+Для облака $[\Delta_{1}]$, по \ref{remUltraMetric} справедливо
+ультраметрическое неравенство.
+ Следующая лемма показывает, что для облака $[\mathbb{R}]$
+это неравенство может не выполняться.
+
 Рассмотрим $\mathbb{R}$ как подмножество
 $\mathbb{R}^2$ и добавим к нему точку $(0,1)$, расстояние до которой будет
-соответствовать манхэттенской метрике в $\mathbb{R}^2$. Обозначим это
+соответствовать метрике $L_{1}$ в $\mathbb{R}^2$. Обозначим это
 пространство $\widetilde{\mathbb{R}}$.
 \begin{theorem}
+Для пространств $\mathbb{Z}$ и $\widetilde{\mathbb{R}}$ выполняются следующие
+утверждения:
 \begin{enumerate}
-\itemПространства $\mathbb{Z}$ и $\widetilde{\mathbb{R}}$ находятся от $\mathbb{R}$
-на расстоянии\\ не большем $\frac 1 2$.
-\item Расстояние между $\mathbb{Z}$ и $\widetilde{\mathbb{R}}$ строго
-больше $\frac 1 2$.
+  \item Пространства $\mathbb{Z}$ и $\widetilde{\mathbb{R}}$ находятся от $\mathbb{R}$
+на расстоянии не большем $\frac 1 2$.\label{thrmPt:1}
+  \item Расстояние между $\mathbb{Z}$ и $\widetilde{\mathbb{R}}$ строго
+больше $\frac 1 2$.\label{thrmPt:2}
 \end{enumerate}
+\label{thrmRUltraMetric}
 \end{theorem}
 \begin{proof}
 Вложением целых чисел в вещественную прямую получается реализация $\mathbb{Z}$, $\mathbb{R}$ с расстоянием Хаусдорфа равным $\frac 1 2$.
 Если вложить $\widetilde{\mathbb{R}}$ в $\mathbb{R}^{2}$ естественным образом, а $\mathbb{R}$ вложить как подмножество равное $\{(x, \frac1 2 )|x\in \mathbb{R}\}$,
-расстояние Хаусдорфа между ними также будет равно $\frac 1 2$. Таким образом, первое утверждение теоремы доказано. \\
+расстояние Хаусдорфа между ними также будет равно $\frac 1 2$. Таким образом, доказано \ref{thrmPt:1}.
+
 Пусть $R$ --- соответствие
-между $\mathbb{Z}$ и $\widetilde{\mathbb{R}}$, $\dis R < 1 + \epsilon$ и
-$\big(i, (0,1)\big) \in R$. Тогда, если
-$x \in \mathbb{R}\backslash(-\epsilon, \epsilon)$, то $(i, x) \notin R$.
-Обозначим за $\mathcal{N}$ множество всех $k \in \mathbb{Z}$ таких, что для всех
-$x \in \mathbb{R}\backslash(-\epsilon, \epsilon)$, $(k,x) \notin R$.
+между $\mathbb{Z}$ и $\widetilde{\mathbb{R}}$, с искажением,
+равным $1 + \epsilon$ и
+в образе точки $i$ из $\mathbb{Z}$ лежит $(0,1)$. По \ref{lemDiamImage} диаметр
+образа точки не может быть больше искажения соответствия,
+следовательо образ $i$ лежит в $(-\epsilon, \epsilon) \cup \bigl\{(0,1)\bigr\}$. Это
+означает, что для
+$x$ не лежащих в $(-\epsilon, \epsilon)$, пара $(i, x)$ не лежит в $R$.
+Обозначим за $\mathcal{N}$ множество всех целых чисел таких, что их
+образ лежит в $(-\epsilon, \epsilon) \cup \bigl\{(0,1)\bigr\}$.
 $\mathcal{N}$ не пусто и не равно $\mathbb{Z}$, следовательно, по лемме 3.1,
-расстояние от $\mathbb{Z} \backslash \mathcal{N}$ до $\mathbb{R}$ будет не
-меньше 1. Рассмотрим подмножество соответствия $R$,
-$R' := R \backslash \{(k,x): x\in (-\epsilon, \epsilon), k \in \mathbb{Z}\} \cup \{\big(i, (0,1)\big)\}$.
-Так как все точки из $\mathbb{R}\backslash(-\epsilon, \epsilon)$ лежат в $R$
-только в паре с точками из $ \mathbb{Z} \backslash \mathcal{N}$ и наоборот,
+расстояние от $\mathbb{Z} \setminus\mathcal{N}$ до $\mathbb{R}$ будет не
+меньше 1.
+Из соответствия $R$ уберем пару $\bigl(i,(0,1)\bigr)$, а также
+все пары $(k,x)$ такие, что $x \in  (-\epsilon, \epsilon)$.
+Получившееся множество обозначим $R'$.
+Так как все точки из $\mathbb{R}\setminus(-\epsilon, \epsilon)$ лежат в $R$
+только в паре с точками из $ \mathbb{Z} \setminus\mathcal{N}$ и наоборот,
 множество $R'$ будет соответствием между
-$\mathbb{R}\backslash(-\epsilon, \epsilon)$ и
-$ \mathbb{Z} \backslash \mathcal{N}$  Тогда,
-$\dis R \ge \dis R' \ge 2d_{GH}(\mathbb{R}\backslash(-\epsilon, \epsilon), \mathbb{Z} \backslash \mathcal{N})$
+$\mathbb{R}\setminus(-\epsilon, \epsilon)$ и
+$ \mathbb{Z} \setminus\mathcal{N}$. Искажение
+подмножества сответствия по определению не больше искажения
+самого соответствия. Получаем цепочку неравенств:
+\[1+\epsilon = \dis R \ge \dis R' \ge 2d_{GH}\bigl(\mathbb{R}\setminus(-\epsilon, \epsilon), \mathbb{Z} \setminus \mathcal{N}\bigr).\]
 По неравенству треугольника
-$2d_{GH}(\mathbb{R}\backslash(-\epsilon, \epsilon), \mathbb{Z} \backslash \mathcal{N}) \ge 2|d_{GH}(\mathbb{R}, \mathbb{Z} \backslash \mathcal{N}) - d_{GH}(\mathbb{R}\backslash(-\epsilon, \epsilon), \mathbb{R})| \ge 2 - 2\epsilon$,
-что при малых $\epsilon$ больше, чем $1 + \epsilon$. Получаем, что
-$d_{GH}(\widetilde{\mathbb{R}}, \mathbb{Z}) > \frac{1}{2}$.
+\[
+    2d_{GH}\bigl(\mathbb{R}\setminus(-\epsilon, \epsilon), \mathbb{Z} \setminus \mathcal{N}\bigr) \ge
+ 2\Big|d_{GH}\bigl(\mathbb{R}, \mathbb{Z} \setminus \mathcal{N}\bigr) - d_{GH}\bigl(\mathbb{R}\setminus(-\epsilon, \epsilon), \mathbb{R}\bigr)\Big| \ge 2 - 2\epsilon.
+\]
+
+Получили неравество : $1 + \epsilon \ge 2 - 2\epsilon$.
+Из него получаем нижнюю оценку на $\epsilon$:
+\[\epsilon \ge \frac 1 3,\]
+откуда $\dis R \ge \frac 4 3$ и
+$d_{GH}\left(\widetilde{\mathbb{R}}, \mathbb{Z}\right) \ge \frac 2 3 > \frac 1 2$,
+что доказывает \ref{thrmPt:2}.
 \end{proof}
